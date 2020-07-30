@@ -1,3 +1,5 @@
+#To find lattice parameters for different We and Re numbers and to study spreading of a droplet.
+
 testWe=[10,30,50,100]
 testD=[40,50,60]
 gmin=1000
@@ -6,9 +8,8 @@ for We in testWe:
     for D in testD:
         a=0.50
         Tc=a/(2.65018*4)
-        #We=52
-        tauv=0.6
-        nu=(tauv-0.5)/3
+        tauv=0.6    #relaxation time
+        nu=(tauv-0.5)/3 #kinematic viscosity
         drho=0.431-0.00149     #density difference
         #drho=0.27582-0.034
         #gamma = 1.265e-2*a + 3.892e-3        #surface tension
