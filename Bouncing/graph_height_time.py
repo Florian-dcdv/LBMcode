@@ -7,7 +7,7 @@ import csv
 
 test='water'
 
-#Bertola graph
+#Bertola graph, height of the center of the droplet in respect of time.
 
 wat=csv.reader(open('Bertola_water.csv','r'),delimiter=',')
 peo=csv.reader(open('Bertola_PEO.csv','r'),delimiter=',')
@@ -22,9 +22,9 @@ if test=='water':
         if k>6:
             t_w.append(float(i[0]))
             h_w.append(float(i[1]))
-    D=48
+    D=48            #Droplet diameter in lattice units
     Dp=3.09e-3
-    g=1.2661e-5
+    g=1.2661e-5     #gravity in lattice units, found with 'Dimensionless numbers.py'
     gp=9.81
 elif test=='peo':        
     t_peo=[]
@@ -73,7 +73,7 @@ rhol=0.455
 xmin=10000
 
 for i in range(0,niter+1,nfreq):    #loop to read all the VTK files
-    reader.SetFileName(test+"/VTKResults/t"+str(i)+".vtk")
+    reader.SetFileName(test+"/VTKResults/t"+str(i)+".vtk")  #Need to perform a simulation of a bouncing droplet with the parameters calculated from 'Dimensionless numbers.py'.
     print(test+"/VTKResults/t"+str(i)+".vtk")
     reader.ReadAllScalarsOn()
     reader.Update()
