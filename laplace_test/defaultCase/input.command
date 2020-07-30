@@ -21,7 +21,7 @@ heatEquationParams={'solveTemperature': False}
 # Equation of state parameters
 #EoSParams={'EoS': 'SC', 'latticeWeighting': True, 'refDensity': 1}
 #EoSParams={'EoS': 'PR', 'criticalTemperature': 0.0729, 'temperatureRatio': 0.86, 'latticeWeighting': False, 'constAsc': 0.344, 'constA': 0.0408, 'constB': 0.09523, 'cZero': 1.}
-EoSParams={'EoS': 'CS', 'criticalTemperature': 0.0377, 'temperatureRatio': 0.50, 'latticeWeighting': False, 'constA': 0.4, 'constB': 4, 'cZero': 1}
+EoSParams={'EoS': 'CS', 'criticalTemperature': 0.0377, 'temperatureRatio': 0.50, 'latticeWeighting': False, 'constA': 0.5, 'constB': 4, 'cZero': 1}
 
 # Boundary conditions
 flowBoundaryConditions={'Format': 'Standard', 'Left': 'Periodic', 'Right': 'Periodic', 'Bottom': 'Periodic', 'Top': 'Periodic'}
