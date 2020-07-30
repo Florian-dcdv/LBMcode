@@ -5,12 +5,12 @@ import time as myTime
 from matplotlib.pyplot import *
 from scipy.optimize import curve_fit
 
-testWe=[10,30,50,'water']
+testWe=[10,30,50,'water'] #Different We numbers
 
-kinematic=True
+kinematic=True  #True if we want to test kinematic phase, False if we want all the phases.
 
 if kinematic==True:
-    testD=[40,50,60]
+    testD=[40,50,60]    #Different diameters, then different Re numbers
 else:
     testD=[40]
 
@@ -63,7 +63,7 @@ for we in testWe:
             for i in range(nstart,niter+1,nfreq):    #loop to read all the VTK files
                 if kinematic==True:
                     if we=='water':
-                        reader.SetFileName('kinematic/water/VTKResults/t'+str(i)+".vtk")
+                        reader.SetFileName('kinematic/water/VTKResults/t'+str(i)+".vtk")    #Need to create a simulation file with the corresponding VTK files
                     else:
                         reader.SetFileName('kinematic/we'+str(we)+'d'+str(do)+"/VTKResults/t"+str(i)+".vtk")
                 else:
@@ -198,7 +198,7 @@ if kinematic==True:
 #    savefig("Spread_factor_kinematic.eps", bbox_extra_artists=(lgd,), bbox_inches='tight')
 #    savefig("Spread_factor_kinematic.png", bbox_extra_artists=(lgd,), bbox_inches='tight')
 #    savefig("Spread_factor_kinematic.eps")
-#      savefig("Spread_factor_kinematic.png")
+#    savefig("Spread_factor_kinematic.png")
 if kinematic==False:
     legend()
     semilogx()
