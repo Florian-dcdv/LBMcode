@@ -2,12 +2,14 @@ from matplotlib.pyplot import *
 from numpy import *
 from scipy.optimize import curve_fit
 
-tau='0.6'
+tau='0.6'   #For the Laplace test
+#tau='0.6a' #For surface tension adjustment with parameter 'a' from CS EoS
 
 dp=[]
 R=[]
 st=[]
-Tr=['0.50','0.70','0.95']
+Tr=['0.50','0.70','0.95']   #For the Laplace test
+#Tr=['a0.25','a0.40','a0.45','a0.50']   #For surface tension adjustment with parameter 'a' from CS EoS
 text='_tau0.6'
 def func(x,a):
     return a*x
@@ -52,7 +54,7 @@ tight_layout()
 savefig("tau"+tau+"/Laplace test"+text+".eps")
 savefig("tau"+tau+"/Laplace test"+text+".png")
 show()
-if tau=='0.6a':
+if tau=='0.6a': #Surface tension adjustment
     Tr2=[]
     for i in Tr:
         i=i.replace('a','')
