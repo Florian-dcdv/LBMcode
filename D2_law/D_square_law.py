@@ -39,7 +39,7 @@ time=[]
 #diameter=[] 
 dsquare=[]
 for i in range(nstart,niter+1,nfreq):    #loop to read all the VTK files
-    reader.SetFileName('static0.6/VTKResults/t'+str(i)+".vtk")
+    reader.SetFileName('static0.6/VTKResults/t'+str(i)+".vtk") #Need to perform a simulation and to call it "static0.6", and use the VTK files. See input.command
     print('static0.6/VTKResults/t'+str(i)+".vtk")
     reader.ReadAllScalarsOn()
     reader.Update()
