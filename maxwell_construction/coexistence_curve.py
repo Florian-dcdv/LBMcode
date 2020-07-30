@@ -101,11 +101,11 @@ def densities(acc):
 
 
 
-EOS='PR'
-LBM='_LBM'
+EOS='CS'
+LBM='_LBM'  #To compare with LBM results
 #LBM=''
-Li=False
-MC=False
+Li=False    #To compare with Li results (Li et al., 2013)
+MC=True    #Set False if Maxwell construction has already been done
 spec=''
 save=True
 
@@ -113,7 +113,7 @@ tempRatio=[]
 pressure=[]
 gasDensity=[]
 liquidDensity=[]
-acc=0.0001
+acc=0.0001      #Accuracy of the results, acc=0.0001 is recommended for CS EoS
  
 if MC==True:
     t1=0.5
@@ -171,9 +171,9 @@ if MC==True:
 #Results from pyLBM
 if LBM=='_LBM':
     if EOS=='CS':
-        tempLBM=[0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5]
-        gasLBM=[0.066,0.0453,0.0316,0.0217,0.0144,0.00914,0.00543,0.00298,0.00149,0.000668]
-        liquidLBM=[0.214,0.251,0.282,0.309,0.335,0.360,0.385,0.409,0.431,0.455]
+        tempLBM=[0.95,0.9,0.85,0.8,0.75,0.7,0.65,0.6,0.55,0.5]  #reduced temperature
+        gasLBM=[0.066,0.0453,0.0316,0.0217,0.0144,0.00914,0.00543,0.00298,0.00149,0.000668] #gas density
+        liquidLBM=[0.214,0.251,0.282,0.309,0.335,0.360,0.385,0.409,0.431,0.455] #liquid density
     elif EOS=='PR':
         tempLBM=[0.95,0.9,0.85,0.8,0.75]
         gasLBM=[1.041,0.6078,0.3679,0.2231,0.135]
