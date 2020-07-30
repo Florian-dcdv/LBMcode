@@ -187,30 +187,3 @@ tight_layout()
 savefig('maxwell_rule.png')
 savefig('maxwell_rule.eps')
 show()
-"""
-def comparison(t1,t2,deltaT,acc):
-    tempRatio=[]
-    pressure=[]
-    gasDensity=[]
-    liquidDensity=[]
-    ratioT=t1
-    while ratioT<=t2:
-        T=ratioT*Tc
-        (p0,rhomin,rhomax,rhog,rhol,zero,err)=densities(acc)
-        pressure.append(p0)
-        gasDensity.append(rhog)
-        liquidDensity.append(rhol)
-        tempRatio.append(ratioT)
-        ratioT=round(ratioT+deltaT,3)
-    return tempRatio,pressure,gasDensity,liquidDensity
-
-(tempRatio,pressure,gasDensity,liquidDensity)=comparison(0.4,0.8,0.05,0.001)
-
-figure(3)
-title("Thermodynamic consistency")
-xlabel("Density")
-ylabel("Reduced temperature")
-plot(gasDensity,tempRatio,'ro')
-plot(liquidDensity,tempRatio,'ro')
-show()
-"""
