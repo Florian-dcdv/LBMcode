@@ -9,6 +9,8 @@ testWe=[10,30,50,'water'] #Different We numbers
 
 kinematic=True  #True if we want to test kinematic phase, False if we want all the phases.
 
+### For kinematic phase study, see the input.command file for an example ###
+
 if kinematic==True:
     testD=[40,50,60]    #Different diameters, then different Re numbers
 else:
