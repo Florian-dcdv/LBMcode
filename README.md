@@ -19,3 +19,5 @@ Each file contain different codes and input file for different cases:
 - Spreading: code to study the spreading factor of a droplet during the kinematic phase.
 
 - D2_law: code to test the D^2 law for heat transfer.
+
+- Leidenfrost: input file to test the Leidenfrost case. The LBM code needs to be corrected to be able to simulate this case properly. Otherwise, it is recommended to set DeltaVel in heatEquation.py for the implicit method to 0.
